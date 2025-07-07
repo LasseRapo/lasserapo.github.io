@@ -18,7 +18,9 @@ NEWSROOM
 
 ## Base transceiver station (BTS) integration and testing
 
-Jabadabaa
+![Molutta Pekka Lundmarkin kanssa](/images/molut3.jpg){: .align-right width="200px"}
+
+I have extensive experience on integration, testing and validation of Nokia's base station systems.
 
 ## University Projects
 
