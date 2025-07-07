@@ -36,7 +36,7 @@ I’ve worked on a range of hands-on projects during my studies — from low-lev
 
 These include things like custom processor design, FPGA programming, custom APIs, IoT data pipelines from sensors to the cloud, as well as graphics and game development in 3D and VR environments.
 
-You can check out some of my public projects [here](https://lasserapo.github.io/projects/).
+You can check out some of my public projects [here](https://lasserapo.dev/projects/).
 
 ## 🙋‍♂️ Volunteering
 
