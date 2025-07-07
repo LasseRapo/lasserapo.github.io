@@ -18,7 +18,7 @@ I'm currently finishing my Master's thesis on cyber threat intelligence sharing,
 
 I contributed to the [NEWSROOM](https://newsroom-project.eu/) project, funded by the European Defence Fund, as part of my Master's thesis. I developed a proof-of-concept system for secure cyber threat intelligence sharing using blockchain-based technology.
 
-You can read more about the proof-of-concept here.
+You can read more about the proof-of-concept [here](https://github.com/LasseRapo/fabric-cti-sharing).
 
 ## 📡 Base transceiver station (BTS) integration and verification
 
