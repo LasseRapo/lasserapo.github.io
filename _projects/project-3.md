@@ -2,7 +2,7 @@
 title: "Speech Recognition using Bluetooth"
 excerpt: "A simple speech recognition system controlling an ESP32 through a Bluetooth Low Energy (BLE) connection. The speech recognition model is developed using Edge Impulse and deployed on the Seeed Xiao BLE nRF52840 Sense board. <br/><img src='/images/speech_recognition.png'>"
 collection: projects
-github: "https://github.com/LasseRapo/nRF52840-SpeechRecognition-BLE"
+# github: "https://github.com/LasseRapo/nRF52840-SpeechRecognition-BLE"
 ---
 
 ## Overview
