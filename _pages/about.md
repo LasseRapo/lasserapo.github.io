@@ -22,8 +22,6 @@ You can read more about the proof-of-concept [here](https://github.com/LasseRapo
 
 ## 📡 Base transceiver station (BTS) integration and verification
 
-![Molutta Pekka Lundmarkin kanssa](/images/molut3.jpg){: .align-right width="250px"}
-
 I have extensive hands-on experience in the integration, testing, and validation of Nokia’s base station systems, with a focus on synchronization functionality.
 
 Most of my work has been manual testing of both classical and cloud-based BTSs, but I've also dipped my toes in some automation testing and scripting.
