@@ -12,6 +12,8 @@ Hello there! I'm Lasse — a soon-to-be MSc graduate in Computer Science and Eng
 
 I'm currently finishing my Master's thesis on cyber threat intelligence sharing, and working part-time as a software tester for Quriiri.
 
+<br>
+
 # Selected Experience
 
 ## 🇪🇺 EU Projects
