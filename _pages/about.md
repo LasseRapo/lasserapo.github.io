@@ -8,7 +8,9 @@ redirect_from:
 ---
 
 
-Jabadaba dauu!!!
+Hello there! I'm Lasse — a soon-to-be MSc graduate in Computer Science and Engineering, specializing in applied computing (GPA 4.2/5). I'm especially interested in cybersecurity, embedded and cloud systems, and software development in general.
+
+I'm currently finishing my Master's thesis on cyber threat intelligence sharing, and working part-time as a software tester for Quriiri.
 
 # Selected Experience
 
