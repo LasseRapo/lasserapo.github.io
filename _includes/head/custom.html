@@ -2,6 +2,215 @@
 
 <!-- start custom head snippets -->
 
+<!-- Google Fonts for better typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Custom CSS for enhanced styling -->
+<style>
+  :root {
+    --primary-color: #0066cc;
+    --primary-light: #4285f4;
+    --secondary-color: #6c757d;
+    --accent-color: #17a2b8;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --card-shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Enhanced typography */
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+  }
+
+  /* Headers with better spacing and modern look */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    background: var(--bg-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
+  h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  /* Experience sections with cards */
+  .page__content h2 {
+    position: relative;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .page__content h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 50px;
+    height: 3px;
+    background: var(--bg-gradient);
+    border-radius: 2px;
+  }
+
+  /* Enhanced paragraph styling */
+  p {
+    margin-bottom: 1.2rem;
+    color: #4a5568;
+  }
+
+  /* Link improvements */
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+  }
+
+  a:hover {
+    color: var(--primary-light);
+    border-bottom-color: var(--primary-light);
+  }
+
+  /* Code styling */
+  code {
+    font-family: 'JetBrains Mono', monospace;
+    background: #f8f9fa;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+
+  /* Enhanced author profile */
+  .author__avatar img {
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+  }
+
+  .author__avatar img:hover {
+    transform: scale(1.05);
+  }
+
+  .author__content h3 {
+    background: var(--bg-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+  }
+
+  /* Enhanced masthead */
+  .masthead {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Smooth animations */
+  * {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  }
+
+  /* Enhanced button styling */
+  .btn {
+    border-radius: 25px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  /* Skills tags styling */
+  .page__content code {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    margin: 0.2rem;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.85em;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .page__content code:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Blockquote styling */
+  blockquote {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    border-left: 4px solid var(--primary-color);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    font-style: italic;
+    box-shadow: var(--card-shadow);
+  }
+
+  blockquote p {
+    margin-bottom: 0;
+    color: #2d3748;
+    font-weight: 500;
+  }
+
+  /* Experience section enhancements */
+  .page__content > h2 + p,
+  .page__content > h2 + ul,
+  .page__content > h2 + blockquote {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: 2rem;
+    box-shadow: var(--card-shadow);
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+    
+    .page__content > h2 + p,
+    .page__content > h2 + ul,
+    .page__content > h2 + blockquote {
+      padding: 1rem;
+      margin-left: -1rem;
+      margin-right: -1rem;
+      border-radius: 0;
+    }
+  }
+</style>
+
 <!-- Support for Academicons -->
 <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
 
