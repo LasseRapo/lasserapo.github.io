@@ -12,9 +12,15 @@
 
   @include clearfix();
   margin-bottom: 1em;
+  background: var(--global-bg-color);
+  border-radius: 0 12px 12px 0;
+  box-shadow: var(--global-shadow-color) 0 2px 12px;
 
   @media (orientation: portrait) {
     margin-top: 1em;
+    border-radius: 12px;
+    margin-left: 1em;
+    margin-right: 1em;
   }
 
   @media screen and (min-width: $sidebar-screen-min-width) {
@@ -22,6 +28,9 @@
     overflow-y: auto;               // Add scrollbar if the sidebar is too long
     position: fixed;
     padding-top: $masthead-height;
+    border-radius: 0;
+    box-shadow: none;
+    border-right: 1px solid var(--global-border-color);
   }
 
   @include breakpoint($large) {
@@ -41,22 +50,29 @@
   }
 
   h2, h3, h4, h5, h6 {
-    margin-bottom: 0;
+    margin-bottom: 0.5em; // Improved from 0
     font-family: $sans-serif-narrow;
+    color: var(--global-text-color);
   }
 
   h3, h4 {
     font-size: $type-size-5;
+    font-weight: 600;
   }
 
   p, li {
     font-family: $sans-serif;
     font-size: $type-size-6;
-    line-height: 1.5;
+    line-height: 1.6; // Improved from 1.5
   }
 
   img {
     width: 100%;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.02);
+    }
   }
 }
 
@@ -91,15 +107,25 @@
     display: block;
     width: auto;
     height: auto;
+    text-align: center;
+    margin-bottom: 1.5em;
   }
 
   img {
     max-width: 175px;
     border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: var(--global-shadow-color) 0 4px 12px;
 
     @include breakpoint($large) {
-      padding: 5px;
-      border: 1px solid var(--global-border-color);
+      padding: 4px;
+      border: 2px solid var(--global-border-color);
+      background: var(--global-bg-color);
+    }
+    
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: var(--global-shadow-color) 0 6px 20px;
     }
   }
 }
@@ -109,34 +135,32 @@
   vertical-align: top;
   padding-left: 15px;
   padding-right: 25px;
-  line-height: 1;
+  line-height: 1.4; // Improved from 1
 
   @include breakpoint($large) {
     display: block;
     width: 100%;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    text-align: center;
   }
 }
 
 .author__name {
   margin: 0;
+  font-weight: 600;
+  color: var(--global-text-color);
 
   @include breakpoint($large) {
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px; // Increased from 10px
   }
-}
-.sidebar .author__name {
-  font-family: $sans-serif;
-  font-size: $type-size-5;
 }
 
-.sidebar .author__desktop {
-  display: none;
-  @media screen and (min-width: 1024px) {
-    display: block;
-  }
+.sidebar .author__name {
+  font-family: $sans-serif;
+  font-size: $type-size-4; // Increased from $type-size-5
+  font-weight: 600;
 }
 
 .author__pronouns {
@@ -150,7 +174,10 @@
 
 .author__bio {
   margin: 0;
-
+  color: var(--global-text-color-light);
+  font-size: $type-size-6;
+  line-height: 1.5;
+  
   @include breakpoint($large) {
     margin-top: 10px;
     margin-bottom: 20px;
