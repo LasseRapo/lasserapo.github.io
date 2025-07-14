@@ -5,9 +5,9 @@
 #main {
   @include container;
   @include clearfix;
-  margin-top: 2.5em; // Increased from 2em
-  padding-left: 1.5em; // Increased from 1em
-  padding-right: 1.5em; // Increased from 1em
+  margin-top: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
   animation: intro 0.3s both;
   animation-delay: 0.35s;
 
@@ -36,11 +36,7 @@
 
 .page__title {
   margin-top: 0;
-  line-height: 1.2;
-  color: var(--global-text-color);
-  font-size: $type-size-2; // Make titles more prominent
-  font-weight: 700;
-  margin-bottom: 1em;
+  line-height: 1;
 
   & + .page__meta {
     margin-top: -0.5em;
@@ -50,39 +46,17 @@
 .page__lead {
   font-family: $global-font-family;
   font-size: $type-size-4;
-  line-height: 1.6;
-  color: var(--global-text-color-light);
-  margin-bottom: 2em;
 }
 
 .page__content {
-  h2 {
-    padding-bottom: 0.8em; // Increased from 0.5em
-    border-bottom: 2px solid var(--global-border-color); // Thicker border
-    margin-top: 3em; // More space above h2
-    margin-bottom: 1.5em;
-    position: relative;
-    
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 60px;
-      height: 2px;
-      background: var(--global-link-color);
-    }
-  }
 
-  h3 {
-    margin-top: 2.5em;
-    margin-bottom: 1em;
-    color: var(--global-text-color);
+  h2 {
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid var(--global-border-color);
   }
 
   p, li, dl {
-    font-size: 1.05em; // Slightly larger text
-    line-height: 1.7; // Better line height
+    font-size: 1em;
   }
 
   /* paragraph indents */
@@ -98,75 +72,28 @@
     }
   }
 
-  // Enhanced link styling
   a {
-    text-decoration: none;
-    color: var(--global-link-color);
-    position: relative;
-    transition: all 0.2s ease;
-    
-    &::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 1px;
-      bottom: -1px;
-      left: 0;
-      background-color: var(--global-link-color);
-      transition: width 0.3s ease;
-    }
+    text-decoration: underline;
 
     &:hover {
-      color: var(--global-link-color-hover);
-      
-      &::after {
-        width: 100%;
-      }
+      text-decoration: underline;
 
       img {
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); // Enhanced shadow
-        transform: translateY(-2px);
-        transition: all 0.3s ease;
-      }
-    }
-  }
-
-  // Improved list styling
-  ul, ol {
-    margin-bottom: 2em;
-    
-    li {
-      margin-bottom: 0.5em;
-      line-height: 1.7;
-    }
-  }
-
-  ul {
-    li {
-      position: relative;
-      
-      &::before {
-        content: '•';
-        color: var(--global-link-color);
-        font-weight: bold;
-        position: absolute;
-        left: -1em;
+        box-shadow: 0 0 10px rgba(#000, 0.25);
       }
     }
   }
 
   dt {
-    margin-top: 1.5em; // Increased from 1em
+    margin-top: 1em;
     font-family: $sans-serif;
-    font-weight: 600; // Changed from bold
-    color: var(--global-text-color);
+    font-weight: bold;
   }
 
   dd {
-    margin-left: 1.5em; // Increased from 1em
+    margin-left: 1em;
     font-family: $sans-serif;
     font-size: $type-size-6;
-    margin-bottom: 1em;
   }
 
   .small {
