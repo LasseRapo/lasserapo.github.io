@@ -30,7 +30,6 @@
     padding-top: $masthead-height;
     border-radius: 0;
     box-shadow: none;
-    border-right: 1px solid var(--global-border-color);
   }
 
   @include breakpoint($large) {
@@ -181,6 +180,7 @@
   @include breakpoint($large) {
     margin-top: 10px;
     margin-bottom: 20px;
+    text-align: center;
   }
 }
 
@@ -234,6 +234,7 @@
     border: 0;
     background: transparent;
     box-shadow: none;
+    text-align: center;
   }
 
   &:before {
