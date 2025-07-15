@@ -1,27 +1,30 @@
 /* ==========================================================================
-   DARK THEME
+   ENHANCED DARK THEME
    ========================================================================== */
 
-/* Color codes used for the theme */
-$gray                       : #7a8288;
-$dark-gray                  : mix(#000, $gray, 40%);
-$darker-gray                : mix(#000, $gray, 60%);
-$light-gray                 : mix(#fff, $gray, 50%);
+/* Modern dark color palette */
+$gray                       : #6b7280;
+$dark-gray                  : #374151;
+$darker-gray                : #1f2937;
+$light-gray                 : #9ca3af;
 
-$background                 : #474747;
-$background-light           : mix(#fff, $background, 80%);
-$background-lighter         : mix(#fff, $background, 90%);
-$text                       : #ffffff;
-$link                       : #0ea1c5;
-$link-dark                  : mix(#000, $link, 25%);
-$link-light                 : mix(#fff, $link, 25%);
+$background                 : #0f1419;      // Rich dark blue-gray
+$background-light           : #1e293b;      // Lighter dark blue-gray
+$background-lighter         : #334155;     // Even lighter for contrast
+$background-card            : #1a1f2e;     // Card backgrounds
+$text                       : #f1f5f9;     // Soft white
+$text-secondary             : #cbd5e1;     // Secondary text
+$link                       : #60a5fa;     // Modern blue
+$link-dark                  : #3b82f6;     // Darker blue for hover
+$link-light                 : #93c5fd;     // Lighter blue for visited
+$accent                     : #8b5cf6;     // Purple accent
 
-/* Color codes used for the site */
-$danger-color               : #ee5f5b;
-$info-color                 : #2f7f93;
-$notice-color               : #7a8288;
-$success-color              : #62c462;
-$warning-color              : #f89406;
+/* Enhanced color codes for better visual hierarchy */
+$danger-color               : #ef4444;     // Modern red
+$info-color                 : #06b6d4;     // Modern cyan
+$notice-color               : #6b7280;     // Neutral gray
+$success-color              : #10b981;     // Modern green
+$warning-color              : #f59e0b;     // Modern amber
 
 /* Other basic settings for the template */
 $border-radius              : 4px;
@@ -33,22 +36,83 @@ $navicon-height             : 4px;
 $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 
-/* Dark theme for the site */
-html[data-theme="dark"] {
+/* Default dark theme (applied to root) */
+:root {
     --global-base-color                 : #{$background};
     --global-bg-color                   : #{$background};
-    --global-footer-bg-color            : #{$background};
-    --global-border-color               : #{$light-gray};
-    --global-dark-border-color          : #{$background-light};
-    --global-code-background-color      : #fafafa;
-    --global-code-text-color            : #{$darker-gray};
+    --global-footer-bg-color            : #{$background-light};
+    --global-border-color               : #{$background-lighter};
+    --global-dark-border-color          : #{$dark-gray};
+    --global-code-background-color      : #{$background-card};
+    --global-code-text-color            : #{$text-secondary};
     --global-fig-caption-color          : #{$light-gray};
     --global-link-color                 : #{$link};
     --global-link-color-hover           : #{$link-dark};
     --global-link-color-visited         : #{$link-light};
     --global-masthead-link-color        : #{$text};
-    --global-masthead-link-color-hover  : #{$background-light};
+    --global-masthead-link-color-hover  : #{$accent};
     --global-text-color                 : #{$text};
-    --global-text-color-light           : #{$light-gray};
+    --global-text-color-light           : #{$text-secondary};
     --global-thead-color                : #{$background-lighter};
+}
+
+/* Enhanced dark theme for the site */
+html[data-theme="dark"] {
+    --global-base-color                 : #{$background};
+    --global-bg-color                   : #{$background};
+    --global-footer-bg-color            : #{$background-light};
+    --global-border-color               : #{$background-lighter};
+    --global-dark-border-color          : #{$dark-gray};
+    --global-code-background-color      : #{$background-card};
+    --global-code-text-color            : #{$text-secondary};
+    --global-fig-caption-color          : #{$light-gray};
+    --global-link-color                 : #{$link};
+    --global-link-color-hover           : #{$link-dark};
+    --global-link-color-visited         : #{$link-light};
+    --global-masthead-link-color        : #{$text};
+    --global-masthead-link-color-hover  : #{$accent};
+    --global-text-color                 : #{$text};
+    --global-text-color-light           : #{$text-secondary};
+    --global-thead-color                : #{$background-lighter};
+}
+
+/* Enhanced visual elements for dark theme */
+html[data-theme="dark"], :root {
+    /* Enhanced shadows for dark theme */
+    --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    
+    /* Card and component styling */
+    --card-background: #{$background-card};
+    --sidebar-background: #{$background-light};
+    --masthead-background: #{$background};
+    
+    /* Border styling */
+    --border-color-light: #{rgba($background-lighter, 0.3)};
+    --border-color-medium: #{rgba($background-lighter, 0.6)};
+}
+
+/* Enhanced masthead styling */
+.masthead {
+    background: var(--masthead-background);
+    border-bottom: 1px solid var(--border-color-medium);
+    box-shadow: var(--box-shadow);
+}
+
+/* Enhanced sidebar styling */
+.sidebar {
+    background: var(--sidebar-background);
+    border-right: 1px solid var(--border-color-medium);
+}
+
+/* Enhanced page content styling */
+.page__content {
+    background: var(--global-bg-color);
+}
+
+/* Enhanced code block styling */
+pre, code {
+    background: var(--global-code-background-color) !important;
+    color: var(--global-code-text-color) !important;
+    border: 1px solid var(--border-color-light);
 }
