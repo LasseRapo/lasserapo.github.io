@@ -84,7 +84,6 @@ html[data-theme="dark"], :root {
     
     /* Card and component styling */
     --card-background: #{$background-card};
-    --sidebar-background: #{$background-light};
     --masthead-background: #{$background};
     
     /* Border styling */
@@ -97,12 +96,6 @@ html[data-theme="dark"], :root {
     background: var(--masthead-background);
     border-bottom: 1px solid var(--border-color-medium);
     box-shadow: var(--box-shadow);
-}
-
-/* Enhanced sidebar styling */
-.sidebar {
-    background: var(--sidebar-background);
-    border-right: 1px solid var(--border-color-medium);
 }
 
 /* Enhanced page content styling */
