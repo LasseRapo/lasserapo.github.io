@@ -109,3 +109,13 @@ pre, code {
     color: var(--global-code-text-color) !important;
     border: 1px solid var(--border-color-light);
 }
+
+/* Fix for burger menu flashing - hide by default until JavaScript determines if needed */
+.greedy-nav button {
+    display: none;
+}
+
+/* Show button only when JavaScript removes the 'hidden' class */
+.greedy-nav button:not(.hidden) {
+    display: block;
+}
