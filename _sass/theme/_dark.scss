@@ -119,3 +119,22 @@ pre, code {
 .greedy-nav button:not(.hidden) {
     display: block;
 }
+
+/* Fix GitHub icon visibility in dark theme */
+html[data-theme="dark"], :root {
+    .fa-github,
+    .fa-github-alt,
+    .fa-github-square {
+        color: #f1f5f9 !important; /* Use the same color as main text for better visibility */
+    }
+    
+    /* Make all social icons more visible in dark theme */
+    .social-icons a {
+        opacity: 0.8;
+        transition: opacity 0.2s ease;
+        
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
