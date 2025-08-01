@@ -66,7 +66,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<ul>
-							<li class="active"><a href="index.html">Homepage</a></li>
+							<li class="active"><a href="/">Homepage</a></li>
 							<li class="dropdown">
 								<a href="projects.html" class="dropdown-toggle">Projects <i class="icon-chevron-right"></i></a>
 								<ul class="dropdown-menu">
@@ -327,7 +327,7 @@
 			});
 			
 			// Specifically handle the Homepage link
-			$('a[href="index.html"]').off('click').on('click', function(event) {
+			$('a[href="/"], a[href="./"]').off('click').on('click', function(event) {
 				event.preventDefault();
 				return false;
 			});
@@ -354,7 +354,7 @@
 			});
 			
 			// Handle main navigation links (excluding dropdown toggles)
-			$('#colorlib-main-nav > div > div > div > ul > li > a[href]').not('.dropdown-toggle').not('[href="index.html"]').off('click').on('click', function(event) {
+			$('#colorlib-main-nav > div > div > div > ul > li > a[href]').not('.dropdown-toggle').not('[href="/"]').not('[href="./"]').off('click').on('click', function(event) {
 				var href = $(this).attr('href');
 				var targetPage = href.split('/').pop();
 				
