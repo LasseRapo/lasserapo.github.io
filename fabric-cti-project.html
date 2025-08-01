@@ -47,6 +47,83 @@
 			animation-duration: 0.5s !important;
 		}
 		
+		/* Fix mobile horizontal scrolling */
+		@media (max-width: 768px) {
+			* {
+				box-sizing: border-box !important;
+			}
+			
+			body, html {
+				overflow-x: hidden !important;
+				width: 100% !important;
+				max-width: 100% !important;
+				position: relative !important;
+			}
+			
+			#colorlib-page {
+				overflow-x: hidden !important;
+				width: 100% !important;
+				max-width: 100% !important;
+				position: relative !important;
+			}
+			
+			.container {
+				padding-left: 15px !important;
+				padding-right: 15px !important;
+				max-width: 100% !important;
+				width: 100% !important;
+				margin-left: 0 !important;
+				margin-right: 0 !important;
+			}
+			
+			.row {
+				margin-left: 0 !important;
+				margin-right: 0 !important;
+				max-width: 100% !important;
+				width: 100% !important;
+			}
+			
+			[class*="col-"] {
+				padding-left: 15px !important;
+				padding-right: 15px !important;
+				width: 100% !important;
+				max-width: 100% !important;
+				margin-left: 0 !important;
+				margin-right: 0 !important;
+				float: none !important;
+			}
+			
+			/* Critical: Remove Bootstrap offsets that cause overflow */
+			.col-md-offset-2, .col-md-offset-1, .col-md-offset-3, .col-md-offset-4 {
+				margin-left: 0 !important;
+			}
+			
+			/* Ensure images don't overflow */
+			.about-img, .work-img, .services-img {
+				max-width: 100% !important;
+				height: auto !important;
+			}
+			
+			/* Fix any potential overflow from rotate elements */
+			.rotate {
+				overflow: hidden !important;
+				max-width: 100% !important;
+			}
+			
+			/* Fix work entry and description containers */
+			.work-entry, .desc {
+				max-width: 100% !important;
+				overflow: hidden !important;
+			}
+			
+			/* Fix viewport unit issues */
+			.js-fullheight, .colorlib-table, .colorlib-table-cell {
+				width: 100% !important;
+				max-width: 100% !important;
+			}
+			
+		}
+		
 		/* Custom image styling for project page */
 		.work-img {
 			background-size: contain !important;
@@ -56,6 +133,17 @@
 			min-height: auto !important;
 			margin: 0 0 60px 0 !important;
 			padding: 0 !important;
+		}
+		
+		/* Mobile-specific adjustments */
+		@media (max-width: 768px) {
+			.work-img {
+				margin-bottom: 0px !important;
+			}
+			
+			.work-entry {
+				margin-top: -10px !important;
+			}
 		}
 		
 		/* Remove extra spacing from work entry */
@@ -230,6 +318,32 @@
 		// Override dropdown navigation behavior to prevent sidebar closing animation
 		$(document).ready(function() {
 			var currentPage = window.location.pathname.split('/').pop();
+			
+			// Smooth scrolling for anchor links
+			$('a[href*=#]:not([href=#])').click(function() {
+				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+					var target = $(this.hash);
+					target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+					if (target.length) {
+						$('html,body').animate({
+							scrollTop: target.offset().top
+						}, 1000);
+						return false;
+					}
+				}
+			});
+			
+			// Waypoints with mobile-specific offset adjustment
+			var isMobile = window.matchMedia("(max-width: 768px)").matches;
+			var waypoint_offset = isMobile ? '95%' : '85%';
+			
+			$('.js-waypoint').waypoint(function(direction) {
+				if (direction === 'down') {
+					$(this.element).addClass('animated fadeInUp');
+				}
+			}, {
+				offset: waypoint_offset
+			});
 			
 			// Remove the default dropdown close handler from main.js that's too aggressive
 			$(document).off('click');

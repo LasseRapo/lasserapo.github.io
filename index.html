@@ -46,6 +46,89 @@
 			-webkit-animation-duration: 0.5s !important;
 			animation-duration: 0.5s !important;
 		}
+		
+		/* Fix mobile horizontal scrolling */
+		@media (max-width: 768px) {
+			* {
+				box-sizing: border-box !important;
+			}
+			
+			body, html {
+				overflow-x: hidden !important;
+				width: 100% !important;
+				max-width: 100% !important;
+				position: relative !important;
+			}
+			
+			#colorlib-page {
+				overflow-x: hidden !important;
+				width: 100% !important;
+				max-width: 100% !important;
+				position: relative !important;
+			}
+			
+			.container {
+				padding-left: 15px !important;
+				padding-right: 15px !important;
+				max-width: 100% !important;
+				width: 100% !important;
+				margin-left: 0 !important;
+				margin-right: 0 !important;
+			}
+			
+			.row {
+				margin-left: 0 !important;
+				margin-right: 0 !important;
+				max-width: 100% !important;
+				width: 100% !important;
+			}
+			
+			[class*="col-"] {
+				padding-left: 15px !important;
+				padding-right: 15px !important;
+				width: 100% !important;
+				max-width: 100% !important;
+				margin-left: 0 !important;
+				margin-right: 0 !important;
+				float: none !important;
+			}
+			
+			/* Critical: Remove Bootstrap offsets that cause overflow */
+			.col-md-offset-2, .col-md-offset-1, .col-md-offset-3, .col-md-offset-4 {
+				margin-left: 0 !important;
+			}
+			
+			/* Fix work entries on mobile */
+			.work-entry .col-md-4.col-md-offset-4 {
+				margin-left: 0 !important;
+				width: 100% !important;
+				padding: 15px !important;
+			}
+			
+			/* Ensure images don't overflow */
+			.about-img, .work-img, .services-img {
+				max-width: 100% !important;
+				height: auto !important;
+			}
+			
+			/* Fix any potential overflow from rotate elements */
+			.rotate {
+				overflow: hidden !important;
+				max-width: 100% !important;
+			}
+			
+			/* Fix work entry and description containers */
+			.work-entry, .desc {
+				max-width: 100% !important;
+				overflow: hidden !important;
+			}
+			
+			/* Fix viewport unit issues */
+			.js-fullheight, .colorlib-table, .colorlib-table-cell {
+				width: 100% !important;
+				max-width: 100% !important;
+			}
+		}
 	</style>
 
 
@@ -302,6 +385,28 @@
 		$(document).ready(function() {
 			var currentPage = window.location.pathname.split('/').pop();
 			if (currentPage === '' || currentPage === '/') currentPage = 'index.html'; // Handle root path
+			
+			// Mobile-specific animation waypoint adjustment
+			function isMobile() {
+				return window.innerWidth <= 768;
+			}
+			
+			// Override the contentWayPoint function for better mobile animation timing
+			if (isMobile()) {
+				$('.animate-box').waypoint(function(direction) {
+					if (direction === 'down' && !$(this.element).hasClass('animated')) {
+						var el = $(this.element);
+						setTimeout(function() {
+							var effect = el.data('animate-effect');
+							if (effect === 'fadeIn') {
+								el.addClass('fadeIn animated');
+							} else {
+								el.addClass('fadeInUp animated');
+							}
+						}, 100);
+					}
+				}, { offset: '95%' }); // Trigger earlier on mobile
+			}
 			
 			// Remove the default dropdown close handler from main.js that's too aggressive
 			$(document).off('click');
