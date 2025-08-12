@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Project: TTN AWS IoT</title>
+	<title>Project: Fabric CTI Sharing</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
@@ -122,22 +122,6 @@
 				max-width: 100% !important;
 			}
 			
-			/* Fix title spacing on mobile to prevent overlap with video */
-			.intro-heading h2 {
-				margin-bottom: 40px !important;
-				line-height: 1.2 !important;
-				word-wrap: break-word !important;
-			}
-			
-			/* Add extra spacing after intro heading */
-			.intro-heading {
-				margin-bottom: 60px !important;
-			}
-			
-			/* Add spacing before video embed on mobile */
-			.work-entry .col-md-8 > div:first-child {
-				margin-top: 20px !important;
-			}
 		}
 		
 		/* Custom image styling for project page */
@@ -145,10 +129,26 @@
 			background-size: contain !important;
 			background-repeat: no-repeat !important;
 			background-position: center !important;
-			height: 285px !important;
+			height: 300px !important;
 			min-height: auto !important;
 			margin: 0 0 60px 0 !important;
 			padding: 0 !important;
+		}
+		
+		/* Mobile-specific adjustments */
+		@media (max-width: 768px) {
+			.work-img {
+				margin-bottom: -30px !important;
+			}
+			
+			#colorlib-work .work-entry {
+				margin-top: -100px !important;
+			}
+			
+			/* Also target the rotate element to reduce gap */
+			.rotate {
+				margin-bottom: -20px !important;
+			}
 		}
 		
 		/* Remove extra spacing from work entry */
@@ -157,7 +157,7 @@
 			padding-bottom: 0 !important;
 			margin-top: -60px !important;
 		}
-
+		
 		.github-btn {
 			background: #333;
 			color: white;
@@ -173,6 +173,16 @@
 			background: #555;
 			color: white;
 			text-decoration: none;
+		}
+		
+		/* Custom code tag styling */
+		code {
+			background-color: #252525 !important;
+			color: #ffffff !important;
+			padding: 2px 6px !important;
+			border-radius: 3px !important;
+			font-size: 0.9em !important;
+			border: 1px solid #e2beff !important;
 		}
 	</style>
 
@@ -200,10 +210,10 @@
 								<ul class="dropdown-menu">
 									<li><a href="projects.html">All Projects</a></li>
 									<li><a href="fabric-cti-project.html">Fabric CTI Sharing</a></li>
-									<li class="active"><a href="ttn-aws-project.html">TTN AWS IoT Project</a></li>
+									<li><a href="ttn-aws-project.html">TTN AWS IoT Project</a></li>
 									<li><a href="speech-recognition-project.html">Speech Recognition</a></li>
-									<li><a href="esp32-datalogger-project.html">ESP32 Data Logger</a></li>
-									<li><a href="azure-iot-pipeline-project.html">Azure IoT Pipeline</a></li>
+									<li class="active"><a href="esp32-datalogger-project.html">ESP32 Data Logger</a></li>
+                                    <li><a href="azure-iot-pipeline-project.html">Azure IoT Pipeline</a></li>
 								</ul>
 							</li>
 							<li><a href="https://github.com/LasseRapo" target="_blank">GitHub</a></li>
@@ -234,29 +244,27 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
-						<span><a href="https://github.com/LasseRapo/TTN-AWS-IoT-Project" target="_blank">View on GitHub</a></span>
-						<h2>TTN AWS IoT Project</h2>
+						<span><a href="https://github.com/LasseRapo/esp32-local-datalogger" target="_blank">View on GitHub</a></span>
+						<h2>ESP32 Local Data Logger</h2>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-12">
 						<div class="rotate">
-							<h2 class="heading">TTN AWS IoT</h2>
+							<h2 class="heading">ESP32 Local Data Logger</h2>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-12">
 						<div class="work-entry animate-box">
+							<a class="work-img" style="background-image: url(images/esp32-iot-screenshot.png);">
+							</a>
 							<div class="col-md-8 col-md-offset-2">
-								<div style="margin-bottom: 40px; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000;">
-									<iframe src="https://www.youtube.com/embed/l7ZJS32fN-E" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-								</div>
 								<div class="desc">
 									<div class="animate-box">
 										<h2>Overview</h2>
-										<p>This project demonstrates a comprehensive end-to-end IoT solution that showcases the complete data flow from sensor readings to cloud storage. The architecture leverages the FIT IoT-LAB testbed, The Things Network (TTN), and Amazon Web Services (AWS).</p>
-										<p>The system workflow follows this path: IoT devices in the FIT IoT-LAB testbed collect sensor data, transmit it via LoRaWAN to The Things Network, which then forwards the data to AWS DynamoDB using MQTT protocol for secure cloud storage and analysis.</p>
+										<p>This project implements a simple local data logging solution using an ESP32 microcontroller. The system continuously monitors environmental conditions through DHT22 temperature/humidity sensors and HC-SR501 PIR motion detection, storing all data locally in CSV format on SPIFFS storage.</p>
 									</div>
 									<style>
 										.custom-gap {
@@ -267,40 +275,65 @@
 									<div class="animate-box">
 										<h2>Key Features</h2>
 										<ul>
-											<li><strong>End-to-End IoT Pipeline:</strong> Complete data flow from sensor to cloud storage</li>
-											<li><strong>LoRaWAN Communication:</strong> Low-power, long-range wireless communication protocol</li>
-											<li><strong>Cloud Integration:</strong> Seamless integration with AWS cloud services</li>
-											<li><strong>Real-time Data Processing:</strong> MQTT-based real-time data forwarding</li>
-											<li><strong>Secure Data Storage:</strong> AWS DynamoDB for reliable and scalable data persistence</li>
-											<li><strong>Testbed Integration:</strong> Utilizes professional IoT testbed infrastructure (FIT IoT-LAB)</li>
-									</ul>
-									<div class="custom-gap"></div>
-									<div class="animate-box">
-										<h2>Technology Stack</h2>
-										<ul>
-											<li><strong>IoT Platform:</strong> FIT IoT-LAB Testbed</li>
-											<li><strong>Communication Protocol:</strong> LoRaWAN</li>
-											<li><strong>Network Server:</strong> The Things Network (TTN)</li>
-											<li><strong>Message Protocol:</strong> MQTT</li>
-											<li><strong>Cloud Provider:</strong> Amazon Web Services (AWS)</li>
-											<li><strong>Database:</strong> AWS DynamoDB</li>
+											<li><strong>Multi-Sensor Data Collection</strong>: DHT22 for temperature (°C & °F) and humidity readings with motion detection via HC-SR501 PIR sensor</li>
+											<li><strong>Local Storage</strong>: SPIFFS-based CSV data storage with automatic header creation and data point counting</li>
+											<li><strong>Real-Time Web Dashboard</strong>: Auto-refreshing responsive web interface with gradient UI and status indicators</li>
+											<li><strong>Multiple Data Formats</strong>: CSV download, JSON API, and live dashboard views</li>
+											<li><strong>Offline Operation</strong>: No cloud dependencies - WiFi only used for NTP time synchronization</li>
+											<li><strong>Power BI Integration</strong>: Direct CSV import capability for data analysis and visualization</li>
+											<li><strong>Configurable Logging</strong>: Adjustable 10-second intervals with retry logic for sensor readings</li>
 										</ul>
 									</div>
 									<div class="custom-gap"></div>
 									<div class="animate-box">
-										<h2>Architecture</h2>
-										<p>The project implements a three-tier IoT architecture:</p>
+										<h2>Technology Stack</h2>
 										<ul>
-											<li><strong>1. Device Layer:</strong> Sensor nodes in FIT IoT-LAB collect environmental data</li>
-											<li><strong>2. Network Layer:</strong> LoRaWAN connectivity through TTN for long-range communication</li>
-											<li><strong>3. Cloud Layer:</strong> AWS services for data storage, processing, and analytics</li>
+											<li><strong>Hardware</strong>: ESP32 Dev Module, DHT22 sensor, HC-SR501 PIR motion sensor</li>
+											<li><strong>Software</strong>: Arduino IDE/PlatformIO, SPIFFS file system</li>
+											<li><strong>Libraries</strong>: DHT sensor library (Adafruit), ArduinoJson</li>
+											<li><strong>Web Technologies</strong>: HTTP server with responsive HTML/CSS dashboard</li>
+											<li><strong>Data Format</strong>: CSV with Unix timestamps and human-readable date/time</li>
+										</ul>
+									</div>
+									<div class="custom-gap"></div>
+									<div class="animate-box">
+										<h2>Hardware Setup</h2>
+										<ul>
+											<li>ESP32 as the main controller with WiFi capability</li>
+											<li>DHT22 sensor for environmental monitoring (GPIO 21)</li>
+											<li>HC-SR501 PIR sensor for motion detection (GPIO 13)</li>
+											<li>Optional 10kΩ pull-up resistor for DHT22 data line</li>
+										</ul>
+									</div>
+									<div class="custom-gap"></div>
+									<div class="animate-box">
+										<h2>Web Interface Features</h2>
+										<p>The built-in web server exposes multiple endpoints:</p>
+										<ul>
+											<li><strong>Dashboard</strong> (<code>/</code>): Live auto-refreshing interface with current metrics</li>
+											<li><strong>Data Download</strong> (<code>/download</code>): Raw CSV file download</li>
+											<li><strong>JSON API</strong> (<code>/data</code>): Programmatic access to logged data</li>
+											<li><strong>System Info</strong> (<code>/info</code>): Storage usage and file statistics</li>
+											<li><strong>Data Reset</strong> (<code>/clear</code>): Clear all logged data and reset counters</li>
+										</ul>
+									</div>
+									<div class="custom-gap"></div>
+									<div class="animate-box">
+										<h2>Data Format</h2>
+										<p>Each logged entry includes:</p>
+										<ul>
+											<li>Unix timestamp and human-readable date/time</li>
+											<li>Temperature in both Celsius and Fahrenheit</li>
+											<li>Relative humidity percentage</li>
+											<li>Motion detection status (aggregated per interval)</li>
+											<li>Sequential data point counter</li>
 										</ul>
 									</div>
 									<div class="custom-gap"></div>
 									<div class="animate-box">
 										<h2>Repository</h2>
-										<p>The complete source code and detailed setup instructions are available on GitHub. The repository includes sensor source code, a comprehensive documentation for replicating the project, and an evaluation of the efficiency and resilience of the project.</p>
-										<a href="https://github.com/LasseRapo/TTN-AWS-IoT-Project" target="_blank" class="github-btn">
+										<p>The repository contains the complete source code and configuration guides.</p>
+										<a href="https://github.com/LasseRapo/esp32-local-datalogger" target="_blank" class="github-btn">
 											<i class="icon-github"></i> View on GitHub
 										</a>
 									</div>
@@ -311,8 +344,7 @@
 				</div>
 			</div>
 		</div>
-
-		<footer>
+</a>		<footer>
 			<div id="footer">
 				<div class="container">
 					<div class="row">
