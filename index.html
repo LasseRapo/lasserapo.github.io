@@ -41,95 +41,99 @@
 	<link rel="stylesheet" href="css/style.css">
 
 	<style>
-		/* Speed up animations */
-		.animated {
-			-webkit-animation-duration: 0.5s !important;
-			animation-duration: 0.5s !important;
-		}
-		
-		/* Fix mobile horizontal scrolling */
-		@media (max-width: 768px) {
-			* {
-				box-sizing: border-box !important;
-			}
-			
-			body, html {
-				overflow-x: hidden !important;
-				width: 100% !important;
-				max-width: 100% !important;
-				position: relative !important;
-			}
-			
-			#colorlib-page {
-				overflow-x: hidden !important;
-				width: 100% !important;
-				max-width: 100% !important;
-				position: relative !important;
-			}
-			
-			.container {
-				padding-left: 15px !important;
-				padding-right: 15px !important;
-				max-width: 100% !important;
-				width: 100% !important;
-				margin-left: 0 !important;
-				margin-right: 0 !important;
-			}
-			
-			.row {
-				margin-left: 0 !important;
-				margin-right: 0 !important;
-				max-width: 100% !important;
-				width: 100% !important;
-			}
-			
-			[class*="col-"] {
-				padding-left: 15px !important;
-				padding-right: 15px !important;
-				width: 100% !important;
-				max-width: 100% !important;
-				margin-left: 0 !important;
-				margin-right: 0 !important;
-				float: none !important;
-			}
-			
-			/* Critical: Remove Bootstrap offsets that cause overflow */
-			.col-md-offset-2, .col-md-offset-1, .col-md-offset-3, .col-md-offset-4 {
-				margin-left: 0 !important;
-			}
-			
-			/* Fix work entries on mobile */
-			.work-entry .col-md-4.col-md-offset-4 {
-				margin-left: 0 !important;
-				width: 100% !important;
-				padding: 15px !important;
-			}
-			
-			/* Ensure images don't overflow */
-			.about-img, .work-img, .services-img {
-				max-width: 100% !important;
-				height: auto !important;
-			}
-			
-			/* Fix any potential overflow from rotate elements */
-			.rotate {
-				overflow: hidden !important;
-				max-width: 100% !important;
-			}
-			
-			/* Fix work entry and description containers */
-			.work-entry, .desc {
-				max-width: 100% !important;
-				overflow: hidden !important;
-			}
-			
-			/* Fix viewport unit issues */
-			.js-fullheight, .colorlib-table, .colorlib-table-cell {
-				width: 100% !important;
-				max-width: 100% !important;
-			}
-		}
-	</style>
+        /* Speed up animations */
+        .animated {
+            -webkit-animation-duration: 0.5s !important;
+            animation-duration: 0.5s !important;
+        }
+        
+        .colorlib-social-icons i {
+            font-size: 32px !important;
+        }
+        
+        /* Fix mobile horizontal scrolling */
+        @media (max-width: 768px) {
+            * {
+                box-sizing: border-box !important;
+            }
+            
+            body, html {
+                overflow-x: hidden !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                position: relative !important;
+            }
+            
+            #colorlib-page {
+                overflow-x: hidden !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                position: relative !important;
+            }
+            
+            .container {
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+            
+            .row {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            
+            [class*="col-"] {
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                float: none !important;
+            }
+            
+            /* Critical: Remove Bootstrap offsets that cause overflow */
+            .col-md-offset-2, .col-md-offset-1, .col-md-offset-3, .col-md-offset-4 {
+                margin-left: 0 !important;
+            }
+            
+            /* Fix work entries on mobile */
+            .work-entry .col-md-4.col-md-offset-4 {
+                margin-left: 0 !important;
+                width: 100% !important;
+                padding: 15px !important;
+            }
+            
+            /* Ensure images don't overflow */
+            .about-img, .work-img, .services-img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            
+            /* Fix any potential overflow from rotate elements */
+            .rotate {
+                overflow: hidden !important;
+                max-width: 100% !important;
+            }
+            
+            /* Fix work entry and description containers */
+            .work-entry, .desc {
+                max-width: 100% !important;
+                overflow: hidden !important;
+            }
+            
+            /* Fix viewport unit issues */
+            .js-fullheight, .colorlib-table, .colorlib-table-cell {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+        }
+    </style>
 
 
 	<!-- Modernizr JS -->
@@ -204,12 +208,12 @@
 								<div class="rotate">
 									<h2 class="heading">About</h2>
 								</div>
-								<p>Hello there! I'm Lasse — a soon-to-be MSc graduate in Computer Science and Engineering, specializing in applied computing (GPA 4.2/5). I'm especially interested in cybersecurity, embedded and cloud systems, and software development in general.</p>
-								<p>I'm currently working as a research assistant in an EU cybersecurity project and part-time as a software tester for Quriiri.</p>
+								<p>Hello there! I'm Lasse — an MSc in Computer Science and Engineering with a strong interest in quality assurance, cybersecurity, embedded systems, and cloud computing. I'm currently working part-time as a software tester at Quriiri, where I focus on test automation and software quality.</p>
+								<p>On this website, you can explore my projects and experiences. I'm also open to new opportunities — feel free to get in touch! You can find my GitHub and LinkedIn profiles below.</p>
 								<p class="colorlib-social-icons">
-									<a href="https://github.com/LasseRapo"><i class="icon-github"></i></a>
-									<a href="https://www.linkedin.com/in/lasse-rapo-84349a204/"><i class="icon-linkedin2"></i></a>
-									<a href="mailto:lasse.r.rapo@gmail.com"><i class="icon-mail"></i></a>
+									<a href="https://github.com/LasseRapo" target="_blank"><i class="icon-github"></i></a>
+									<a href="https://www.linkedin.com/in/lasse-rapo-84349a204/" target="_blank"><i class="icon-linkedin2"></i></a>
+									<a href="mailto:lasse.r.rapo@gmail.com" target="_blank"><i class="icon-mail"></i></a>
 								</p>
 							</div>
 						</div>
@@ -240,6 +244,11 @@
 									</div>
 									<div class="col-md-12">
 										<div class="services animate-box">
+											<h3>✅ Software Testing</h3>
+											<p>I work part-time as a Software Tester at Quriiri, focusing on modern test automation and quality assurance practices.</p>
+											<p>My responsibilities include designing and implementing Playwright tests, and also ensuring quality through manual testing.</p>
+										</div>
+										<div class="services animate-box">
 											<h3>🇪🇺 EU Projects</h3>
 											<p>I contributed to the <a href="https://newsroom-project.eu/" target="_blank">NEWSROOM</a> project, funded by the European Defence Fund, as part of my Master's thesis. I developed a proof-of-concept system for secure cyber threat intelligence sharing using blockchain-based technology.</p>
 											<p>You can read more about the proof-of-concept <a href="https://github.com/LasseRapo/fabric-cti-sharing" target="_blank">here</a>.</p>
@@ -247,13 +256,13 @@
 										<div class="services animate-box">
 											<h3>📡 Base transceiver station (BTS) integration and verification</h3>
 											<p>I have extensive hands-on experience in the integration, testing, and validation of Nokia's base station systems, with a focus on synchronization functionality.</p>
-											<p>Most of my work has been manual testing of both classical and cloud-based BTSs, but I've also dipped my toes in automation testing and scripting.</p>
+											<p>Most of my work has been manual testing of both classical and cloud-based BTSs, but I also have experience in automation testing and scripting.</p>
 											<p>During my time at Nokia, I have learned an understanding of BTS and RF technologies, testing methodologies, and several tools like Jira, Jenkins, and Linux-based systems.</p>
 										</div>
 										<div class="services animate-box">
 											<h3>💻 Personal Projects</h3>
 											<p>I've worked on a range of hands-on projects — from low-level hardware design to high-level software and data processing.</p>
-											<p>These include things like custom processor design, FPGA programming, custom APIs, IoT data pipelines from sensors to the cloud, as well as graphics and game development in 3D and VR environments.</p>
+											<p>These include things like custom processor design, FPGA programming, custom APIs, IoT data pipelines from sensors to the cloud, as well as graphics and game development in 2D/3D and VR environments.</p>
 											<p>You can check out some of my public projects <a href="projects.html" target="_blank">here</a>.</p>
 										</div>
 										<div class="services animate-box">
